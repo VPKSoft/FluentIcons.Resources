@@ -15,16 +15,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout main
     - uses: actions/checkout@v3
       with:
+        path: main
+    - name: Checkout fluentui-system-icons
+      uses: actions/checkout@v3  
+      with:
         repository: microsoft/fluentui-system-icons
-        path: './fluentui-system-icons'
+        path: fluentui-system-icons
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore /home/runner/work/FluentIcons.Resources/FluentIcons.Resources/FluentIcons.Resources/FluentIcons.Resources.csproj
+      run: dotnet restore
     - name: Install CS-Script
       run: repo=https://github.com/oleg-shilo/cs-script/releases/download/v4.4.7.0/; file=cs-script_4.4-7.deb; rm $file; wget $repo$file; sudo dpkg -i $file
     - name: Generate resources
