@@ -348,3 +348,28 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/FluentIcons.Resources/Filled/Size48.resx
+/FluentIcons.Resources/Filled/Size48.Designer.cs
+/FluentIcons.Resources/Filled/Size32.resx
+/FluentIcons.Resources/Filled/Size32.Designer.cs
+/FluentIcons.Resources/Filled/Size28.resx
+/FluentIcons.Resources/Filled/Size28.Designer.cs
+/FluentIcons.Resources/Filled/Size24.resx
+/FluentIcons.Resources/Filled/Size24.Designer.cs
+/FluentIcons.Resources/Filled/Size20.resx
+/FluentIcons.Resources/Filled/Size20.Designer.cs
+/FluentIcons.Resources/Filled/Size16.resx
+/FluentIcons.Resources/Filled/Size16.Designer.cs
+/FluentIcons.Resources/Regular/Size48.resx
+/FluentIcons.Resources/Regular/Size48.Designer.cs
+/FluentIcons.Resources/Regular/Size32.resx
+/FluentIcons.Resources/Regular/Size32.Designer.cs
+/FluentIcons.Resources/Regular/Size28.resx
+/FluentIcons.Resources/Regular/Size28.Designer.cs
+/FluentIcons.Resources/Regular/Size24.resx
+/FluentIcons.Resources/Regular/Size24.Designer.cs
+/FluentIcons.Resources/Regular/Size20.resx
+/FluentIcons.Resources/Regular/Size20.Designer.cs
+/FluentIcons.Resources/Regular/Size16.resx
+/FluentIcons.Resources/Regular/Size16.Designer.cs
+/GenerateResources/FluentIconsFilled.Designer.cs

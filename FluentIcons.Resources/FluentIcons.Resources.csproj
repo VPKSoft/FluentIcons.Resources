@@ -1,0 +1,148 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>Petteri Kautonen</Authors>
+    <Company>VPKSoft</Company>
+    <Description>SVG icons from the Microsoft Fluent UI System Icons as a resource package.</Description>
+    <Copyright>Copyright © VPKSoft 2022</Copyright>
+    <PackageIcon>ic_fluent_mail_filled.png</PackageIcon>
+    <RepositoryUrl>https://github.com/VPKSoft/FluentIcons.Resources</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/VPKSoft/FluentIcons.Resources</PackageProjectUrl>
+    <PackageTags>icons fluentui-system-icons icons Fluent UI System Icons resources</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Filled\Size16.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Size16.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Filled\Size20.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Size20.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Filled\Size24.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Size24.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Filled\Size28.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Size28.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Filled\Size32.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Size32.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Filled\Size48.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Size48.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Regular\Size16.Designer.cs">
+      <DependentUpon>Size16.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Regular\Size20.Designer.cs">
+      <DependentUpon>Size20.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Regular\Size24.Designer.cs">
+      <DependentUpon>Size24.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Regular\Size28.Designer.cs">
+      <DependentUpon>Size28.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Regular\Size32.Designer.cs">
+      <DependentUpon>Size32.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Regular\Size48.Designer.cs">
+      <DependentUpon>Size48.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Filled\Size16.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Size16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filled\Size20.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Size20.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filled\Size24.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Size24.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filled\Size28.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Size28.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filled\Size32.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Size32.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filled\Size48.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Size48.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Regular\Size16.resx">
+      <LastGenOutput>Size16.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Regular\Size20.resx">
+      <LastGenOutput>Size20.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Regular\Size24.resx">
+      <LastGenOutput>Size24.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Regular\Size28.resx">
+      <LastGenOutput>Size28.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Regular\Size32.resx">
+      <LastGenOutput>Size32.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Regular\Size48.resx">
+      <LastGenOutput>Size48.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ic_fluent_mail_filled.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
