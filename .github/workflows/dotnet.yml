@@ -34,7 +34,7 @@ jobs:
       run: repo=https://github.com/oleg-shilo/cs-script/releases/download/v4.4.7.0/; file=cs-script_4.4-7.deb; wget $repo$file; sudo dpkg -i $file; rm $file
     - name: Generate resources
       run: |
-        cd /home/runner/work/FluentIcons.Resources/FluentIcons.Resources/main/FluentIcons.Resources/GenerateResources
+        cd /home/runner/work/FluentIcons.Resources/FluentIcons.Resources/main/GenerateResources
         css ./resource_generate.cs
     - name: Build
       run: dotnet build --no-restore /home/runner/work/FluentIcons.Resources/FluentIcons.Resources/main/FluentIcons.Resources/FluentIcons.Resources.csproj
