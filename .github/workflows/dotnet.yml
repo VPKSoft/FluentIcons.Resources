@@ -24,7 +24,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./FluentIcons.Resources.csproj
     - name: Install CS-Script
       run: repo=https://github.com/oleg-shilo/cs-script/releases/download/v4.4.7.0/; file=cs-script_4.4-7.deb; rm $file; wget $repo$file; sudo dpkg -i $file
     - name: Generate resources
