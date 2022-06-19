@@ -4,18 +4,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+int[] sizes = {16, 20, 24, 28, 32, 48,};
+string[] sizeTypes = { "Filled", "Regular", };
 
-var pattern = "*filled*.svg";
-var resourceFilePath = "Properties";
-var resourceFileName = "FluentIconsFilled";
-
-var resxFileEntry = @"
+string resXFileEntry = @"
 <data name=""{0}"" type=""System.Resources.ResXFileRef, System.Windows.Forms"">
     <value>{1};System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 ";
 
-var resxDesignerEntry = @"
+string resXDesignerEntry = @"
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
@@ -27,52 +25,69 @@ var resxDesignerEntry = @"
         }
 ";
 
-Directory.CreateDirectory(resourceFilePath);
+var destinationDirectory = "../FluentIcons.Resources/Properties";
+var destinationResXDirectory = "../FluentIcons.Resources";
+Directory.CreateDirectory(destinationDirectory);
 
-var files = GetFilesForResource("../fluentui-system-icons/assets", pattern).ToList();
-
-Console.WriteLine($"Files found: {files.Count}...");
-
-foreach (var file in files)
+foreach(var sizeType in sizeTypes)
 {
-    var fileName = Path.GetFileName(file);
-    var destinationFile = Path.Combine(resourceFilePath, fileName);
-    Console.WriteLine($"Copy file: '{file}' --> '{destinationFile}'.");
-    File.Copy(file, destinationFile, true);
+    foreach (var size in sizes)
+    {
+        var pattern = $"ic_fluent*{size}*{sizeType.ToLower()}*.svg";
+        Console.WriteLine($"Search pattern '{pattern}'.");
+        var files = GetFilesForResource("../../fluentui-system-icons/assets", pattern).ToList();
+        Console.WriteLine($"{files.Count}");
+        var destinationFolder = Path.Combine(destinationResXDirectory);
+        var destinationFileResX = Path.Combine(destinationFolder, sizeType, $"Size{size}.resx");
+        var destinationFileCs = Path.Combine(destinationFolder, sizeType, $"Size{size}.Designer.cs");
+        Console.WriteLine($"Create file: '{destinationFileResX}'...");
+        var resXFile = File.CreateText(destinationFileResX);
+        Console.WriteLine($"Create file: '{destinationFileCs}'...");
+        var resXDesignerFile = File.CreateText(destinationFileCs);
+        resXFile.Write(File.ReadAllText("resx_file_start.txt"));
+        resXDesignerFile.Write(File.ReadAllText("empty_resources_template.txt")
+            .Replace("#CLASSNAME#", $"public class {sizeType}{size}")
+            .Replace("#CONSTRUCTOR#", $"{sizeType}{size}")
+            .Replace("#NAMESPACE.CLASS#", $"FluentIcons.Resources.{sizeType}{size}")
+            .Replace("#NAMESPACE#", $"FluentIcons.Resources.{sizeType}"));
+
+        var addedResources = new List<string>();
+
+        foreach (var file in files)
+        {
+            var fileName = Path.GetFileName(file);
+
+            if (addedResources.Contains(fileName)) 
+            {
+                continue;
+            }
+
+            addedResources.Add(fileName);
+
+            var destinationFile = Path.Combine(destinationDirectory, fileName);
+            Console.WriteLine($"Copy file '{file}' --> '{destinationFile}'.");
+            File.Copy(file, destinationFile, true);
+
+            resXFile.Write(
+                string.Format(resXFileEntry, 
+                    Path.GetFileNameWithoutExtension(fileName), 
+                    $@"..\Properties\{fileName}"));
+
+            resXDesignerFile.Write(
+                resXDesignerEntry.Replace("#NAME#", Path.GetFileNameWithoutExtension(file)));            
+        }
+
+        resXDesignerFile.WriteLine("    }");
+        resXDesignerFile.WriteLine("}");
+
+        resXFile.WriteLine("</root>");
+
+        resXFile.Flush();
+        resXDesignerFile.Flush();
+        resXFile.Dispose();
+        resXDesignerFile.Dispose();
+    }
 }
-
-var resxFileName = resourceFileName + ".resx";
-var resxDesignerFileName = resourceFileName + ".Designer.cs";
-var resxFile = File.CreateText(resxFileName);
-var resxDesignerFile = File.CreateText(resxDesignerFileName);
-
-resxFile.Write(File.ReadAllText("resx_file_start.txt"));
-resxDesignerFile.Write(File.ReadAllText("empty_resources_template.txt"));
-
-
-
-foreach (var file in files)
-{
-    var fileName = Path.GetFileName(file);
-    var destinationFile = Path.Combine(resourceFilePath, fileName);
-
-    resxFile.Write(
-        string.Format(resxFileEntry, 
-            Path.GetFileNameWithoutExtension(file), 
-            $@".\{destinationFile}"));
-
-    resxDesignerFile.Write(
-        resxDesignerEntry.Replace("#NAME#", Path.GetFileNameWithoutExtension(file)));
-}
-
-resxDesignerFile.Write("    }");
-resxDesignerFile.Write("}");
-
-resxFile.WriteLine("</root>");
-resxFile.Flush();
-resxDesignerFile.Flush();
-resxFile.Dispose();
-resxDesignerFile.Dispose();
 
 string user()
     => Environment.UserName;

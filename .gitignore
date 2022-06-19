@@ -373,3 +373,4 @@ MigrationBackup/
 /FluentIcons.Resources/Regular/Size16.resx
 /FluentIcons.Resources/Regular/Size16.Designer.cs
 /GenerateResources/FluentIconsFilled.Designer.cs
+**/Properties/*.svg
