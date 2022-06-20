@@ -27,6 +27,26 @@ The icon resources are generated using the [CS-Script](https://github.com/oleg-s
 * Run: `css ./resource_generate.cs`
 * Rebuild the project
 
+### Package resource structure
+```
+FluentIcons
+     .Resources
+          .Filled
+               .Filled16
+               .Filled20               
+               .Filled24               
+               .Filled28               
+               .Filled32               
+               .Filled48               
+          .Regular
+               .Regular16
+               .Regular20               
+               .Regular24               
+               .Regular28               
+               .Regular32               
+               .Regular48                              
+```
+
 ### Thanks to
 * [Microsoft Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons) (obvious)
 * [CS-Script](https://github.com/oleg-shilo/cs-script)
