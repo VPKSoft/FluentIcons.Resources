@@ -51,5 +51,5 @@ jobs:
        # Glob doesn't seem to work: for f in ./*/*.nupkg
        do
          dotnet nuget push $f -k $GH_PACKAGES_APIKEY -s $PACKAGESAPI --skip-duplicate
-         dotnet nuget push $f -k $NUGET_APIKEY -s $NUGETAPI --skip-duplicate
+         # dotnet nuget push $f -k $NUGET_APIKEY -s $NUGETAPI --skip-duplicate
        done
