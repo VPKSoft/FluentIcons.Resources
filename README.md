@@ -23,7 +23,7 @@ The icon resources are generated using the [CS-Script](https://github.com/oleg-s
       - FluentIcons.Resources
       - fluentui-system-icons
 ```
-* Change to directory: `FluentIcons.Resources\GenerateResources`
+* Change to directory: `FluentIcons.Resources/GenerateResources`
 * Run: `css ./resource_generate.cs`
 * Rebuild the project
 
