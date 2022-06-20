@@ -53,9 +53,9 @@ foreach(var sizeType in sizeTypes)
         var resXDesignerFile = File.CreateText(destinationFileCs);
         resXFile.Write(File.ReadAllText("resx_file_start.txt"));
         resXDesignerFile.Write(File.ReadAllText("empty_resources_template.txt")
-            .Replace("#CLASSNAME#", $"public class {sizeType}{size}")
-            .Replace("#CONSTRUCTOR#", $"{sizeType}{size}")
-            .Replace("#NAMESPACE.CLASS#", $"FluentIcons.Resources.{sizeType}{size}")
+            .Replace("#CLASSNAME#", $"public class Size{size}")
+            .Replace("#CONSTRUCTOR#", $"Size{size}")
+            .Replace("#NAMESPACE.CLASS#", $"FluentIcons.Resources.{sizeType}.Size{size}")
             .Replace("#NAMESPACE#", $"FluentIcons.Resources.{sizeType}"));
 
         var addedResources = new List<string>();
