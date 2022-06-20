@@ -34,19 +34,19 @@ The icon resources are generated using the [CS-Script](https://github.com/oleg-s
 FluentIcons
      .Resources
           .Filled
-               .Filled16
-               .Filled20               
-               .Filled24               
-               .Filled28               
-               .Filled32               
-               .Filled48               
+               .Size16
+               .Size20               
+               .Size24               
+               .Size28               
+               .Size32               
+               .Size48               
           .Regular
-               .Regular16
-               .Regular20               
-               .Regular24               
-               .Regular28               
-               .Regular32               
-               .Regular48                              
+               .Size16
+               .Size20               
+               .Size24               
+               .Size28               
+               .Size32               
+               .Size48                              
 ```
 
 ### Thanks to
