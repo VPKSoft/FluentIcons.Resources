@@ -3,6 +3,8 @@ SVG icons from the Microsoft Fluent UI System Icons as a resource package.
 
 This is a machine-generated package of the [Microsoft Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons). The SVG files are packaged into resources and released as a NuGet package which makes this suitable for desktop application use. All the icons are binary `byte[]` resources so a conversion to a displayable icon is required unless SVG is directly supported by the platform.
 
+The SVG icons in the package are divided in different sizes and not all size sets are complete. However with SVG the size doesn't matter, just scale the icon you wish to use to any desired size.
+
 The icon resources are generated using the [CS-Script](https://github.com/oleg-shilo/cs-script), to install the CS-Script:
 * On Windows, [Chocolatey](https://chocolatey.org), `choco install cs-script`
 * On Linux, DEB, `repo=https://github.com/oleg-shilo/cs-script/releases/download/v4.4.7.0/; file=cs-script_4.4-7.deb; wget $repo$file; sudo dpkg -i $file; rm $file`
