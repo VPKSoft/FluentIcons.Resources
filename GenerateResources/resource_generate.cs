@@ -44,7 +44,7 @@ foreach(var sizeType in sizeTypes)
         var pattern = $"ic_fluent*{size}*{sizeType.ToLower()}*.svg";
         Console.WriteLine($"Search pattern '{pattern}'.");
         var files = GetFilesForResource("../../fluentui-system-icons/assets", pattern).ToList();
-        Console.WriteLine($"{files.Count}");
+        Console.WriteLine($"Number of files found with the pattern: {files.Count}");
         var destinationFileResX = Path.Combine(destinationFolder, sizeType, $"Size{size}.resx");
         var destinationFileCs = Path.Combine(destinationFolder, sizeType, $"Size{size}.Designer.cs");
         Console.WriteLine($"Create file: '{destinationFileResX}'...");
@@ -72,7 +72,6 @@ foreach(var sizeType in sizeTypes)
             addedResources.Add(fileName);
 
             var destinationFile = Path.Combine(destinationDirectory, fileName);
-            Console.WriteLine($"Copy file '{file}' --> '{destinationFile}'.");
             File.Copy(file, destinationFile, true);
 
             resXFile.Write(
